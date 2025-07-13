@@ -9,6 +9,10 @@ import { ThemeProvider } from "@/hooks/useTheme";
 import Layout from "@/components/Layout";
 import AuthForm from "@/components/auth/AuthForm";
 import ProductGrid from "@/components/products/ProductGrid";
+import CartPage from "@/components/cart/CartPage";
+import OrdersPage from "@/components/orders/OrdersPage";
+import AdminDashboard from "@/components/admin/AdminDashboard";
+import SellerDashboard from "@/components/seller/SellerDashboard";
 import { useState } from "react";
 
 const queryClient = new QueryClient();
@@ -69,6 +73,10 @@ const App = () => (
             <Layout>
               <Routes>
                 <Route path="/" element={<HomePage />} />
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/orders" element={<OrdersPage />} />
+                <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="/seller" element={<SellerDashboard />} />
                 <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </Layout>
