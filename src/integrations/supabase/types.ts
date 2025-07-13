@@ -14,7 +14,162 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      orders: {
+        Row: {
+          buyer_id: string | null
+          created_at: string | null
+          id: string
+          payment_method: string
+          product_id: string | null
+          quantity: number
+          seller_id: string | null
+          status: string | null
+          total_price: number
+        }
+        Insert: {
+          buyer_id?: string | null
+          created_at?: string | null
+          id?: string
+          payment_method: string
+          product_id?: string | null
+          quantity: number
+          seller_id?: string | null
+          status?: string | null
+          total_price: number
+        }
+        Update: {
+          buyer_id?: string | null
+          created_at?: string | null
+          id?: string
+          payment_method?: string
+          product_id?: string | null
+          quantity?: number
+          seller_id?: string | null
+          status?: string | null
+          total_price?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "orders_buyer_id_fkey"
+            columns: ["buyer_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "orders_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "orders_seller_id_fkey"
+            columns: ["seller_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      products: {
+        Row: {
+          category: string | null
+          created_at: string | null
+          description: string | null
+          id: string
+          image_url: string
+          name: string
+          negotiable: boolean | null
+          price: number
+          quantity: number
+          seller_id: string | null
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url: string
+          name: string
+          negotiable?: boolean | null
+          price: number
+          quantity: number
+          seller_id?: string | null
+        }
+        Update: {
+          category?: string | null
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string
+          name?: string
+          negotiable?: boolean | null
+          price?: number
+          quantity?: number
+          seller_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "products_seller_id_fkey"
+            columns: ["seller_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      users: {
+        Row: {
+          address: string | null
+          auth_id: string | null
+          brand_name: string | null
+          calling_number1: string | null
+          calling_number2: string | null
+          created_at: string | null
+          email: string
+          id: string
+          is_active: boolean | null
+          is_verified: boolean | null
+          name: string
+          profile_picture: string | null
+          role: string
+          whatsapp_number: string | null
+        }
+        Insert: {
+          address?: string | null
+          auth_id?: string | null
+          brand_name?: string | null
+          calling_number1?: string | null
+          calling_number2?: string | null
+          created_at?: string | null
+          email: string
+          id?: string
+          is_active?: boolean | null
+          is_verified?: boolean | null
+          name: string
+          profile_picture?: string | null
+          role: string
+          whatsapp_number?: string | null
+        }
+        Update: {
+          address?: string | null
+          auth_id?: string | null
+          brand_name?: string | null
+          calling_number1?: string | null
+          calling_number2?: string | null
+          created_at?: string | null
+          email?: string
+          id?: string
+          is_active?: boolean | null
+          is_verified?: boolean | null
+          name?: string
+          profile_picture?: string | null
+          role?: string
+          whatsapp_number?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
