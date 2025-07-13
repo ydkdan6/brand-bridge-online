@@ -30,8 +30,8 @@ const OrdersPage = () => {
         .select(`
           *,
           products (*),
-          buyer_user:buyer_id (name, email),
-          seller_user:seller_id (name, email, brand_name)
+          buyer_user:users!orders_buyer_id_fkey (name, email),
+          seller_user:users!orders_seller_id_fkey (name, email, brand_name)
         `)
         .or(`buyer_id.eq.${userProfile.id},seller_id.eq.${userProfile.id}`)
         .order('created_at', { ascending: false });
@@ -41,7 +41,7 @@ const OrdersPage = () => {
         throw error;
       }
 
-      return data as Order[];
+      return data as any[];
     },
     enabled: !!userProfile
   });
