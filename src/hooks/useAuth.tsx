@@ -83,13 +83,25 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     if (error) return { error };
 
     if (data.user) {
+      // Ensure required fields are provided with proper types
+      const profileData = {
+        auth_id: data.user.id,
+        email,
+        name: userData.name || '',
+        role: userData.role || 'buyer',
+        brand_name: userData.brand_name || null,
+        address: userData.address || null,
+        whatsapp_number: userData.whatsapp_number || null,
+        calling_number1: userData.calling_number1 || null,
+        calling_number2: userData.calling_number2 || null,
+        profile_picture: userData.profile_picture || null,
+        is_verified: false,
+        is_active: true
+      };
+
       const { error: profileError } = await supabase
         .from('users')
-        .insert({
-          auth_id: data.user.id,
-          email,
-          ...userData
-        });
+        .insert(profileData);
       
       return { error: profileError };
     }
