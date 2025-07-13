@@ -232,7 +232,7 @@ const SellerDashboard = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="price">Price ($) *</Label>
+                  <Label htmlFor="price">Price (₦) *</Label>
                   <Input
                     id="price"
                     type="number"
@@ -319,7 +319,7 @@ const SellerDashboard = () => {
               <CardTitle className="text-lg">{product.name}</CardTitle>
               <div className="flex items-center justify-between">
                 <span className="text-2xl font-bold text-primary">
-                  ${Number(product.price).toFixed(2)}
+                  ₦{Number(product.price).toFixed(2)}
                 </span>
                 <span className="text-sm text-muted-foreground">
                   {product.quantity} available

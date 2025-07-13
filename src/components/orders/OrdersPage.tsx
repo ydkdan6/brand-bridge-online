@@ -164,7 +164,7 @@ const OrdersPage = () => {
                     Quantity: {order.quantity}
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Price: ${Number(order.total_price).toFixed(2)}
+                    Price: ₦{Number(order.total_price).toFixed(2)}
                   </p>
                   <p className="text-sm text-muted-foreground">
                     Payment: {order.payment_method.replace('_', ' ')}

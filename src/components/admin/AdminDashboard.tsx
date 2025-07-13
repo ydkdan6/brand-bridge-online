@@ -294,7 +294,7 @@ const AdminDashboard = () => {
                           Seller: {product.users?.brand_name || product.users?.name}
                         </p>
                         <p className="text-sm text-muted-foreground">
-                          Price: ${Number(product.price).toFixed(2)} | Qty: {product.quantity}
+                          Price: ₦{Number(product.price).toFixed(2)} | Qty: {product.quantity}
                         </p>
                       </div>
                     </div>
@@ -340,7 +340,8 @@ const AdminDashboard = () => {
                       
                       <div>
                         <p className="font-medium">Total</p>
-                        <p className="text-muted-foreground">${Number(order.total_price).toFixed(2)}</p>
+                        <p className="text-muted-foreground">33Number(order.total_price).toFixed(2)}</p>
+                        <p className="text-muted-foreground">{Number(order.total_price).toFixed(2)}</p>
                       </div>
                     </div>
                   </div>

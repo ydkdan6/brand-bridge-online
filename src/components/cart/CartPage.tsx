@@ -121,7 +121,7 @@ const CartPage = () => {
       
       toast({
         title: "Order Placed Successfully!",
-        description: `Your order has been placed. Total: $${calculateTotal().toFixed(2)}`,
+        description: `Your order has been placed. Total: ₦${calculateTotal().toFixed(2)}`,
       });
 
     } catch (error) {
@@ -176,7 +176,7 @@ const CartPage = () => {
                 <div className="flex-1">
                   <h3 className="font-semibold text-lg">{item.name}</h3>
                   <p className="text-2xl font-bold text-primary">
-                    ${item.price.toFixed(2)}
+                    ₦{item.price.toFixed(2)}
                   </p>
                 </div>
 
@@ -206,7 +206,7 @@ const CartPage = () => {
 
                 <div className="text-right">
                   <p className="font-bold text-lg">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    ₦{(item.price * item.quantity).toFixed(2)}
                   </p>
                   <Button
                     variant="ghost"
@@ -230,11 +230,11 @@ const CartPage = () => {
             <CardContent className="space-y-4">
               <div className="flex justify-between text-lg">
                 <span>Subtotal:</span>
-                <span>${calculateTotal().toFixed(2)}</span>
+                <span>₦{calculateTotal().toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-xl font-bold">
                 <span>Total:</span>
-                <span>${calculateTotal().toFixed(2)}</span>
+                <span>₦{calculateTotal().toFixed(2)}</span>
               </div>
             </CardContent>
             <CardFooter className="flex flex-col space-y-4">

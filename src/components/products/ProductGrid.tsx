@@ -153,7 +153,7 @@ const ProductGrid = ({ onProductClick }: ProductGridProps) => {
             <CardTitle className="text-lg line-clamp-2">{product.name}</CardTitle>
             <div className="flex items-center justify-between">
               <span className="text-2xl font-bold text-primary">
-                ${Number(product.price).toFixed(2)}
+                ₦{Number(product.price).toFixed(2)}
               </span>
               <span className="text-sm text-muted-foreground">
                 {product.quantity} available
@@ -199,7 +199,7 @@ const ProductGrid = ({ onProductClick }: ProductGridProps) => {
                 onClick={(e) => {
                   e.stopPropagation();
                   const message = encodeURIComponent(
-                    `Hi, I'm interested in your product: ${product.name}. Price: $${product.price}. Can we negotiate?`
+                    `Hi, I'm interested in your product: ${product.name}. Price: ₦${product.price}. Can we negotiate?`
                   );
                   window.open(`https://wa.me/${product.users.whatsapp_number}?text=${message}`, '_blank');
                 }}
