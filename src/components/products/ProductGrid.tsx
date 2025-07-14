@@ -199,7 +199,7 @@ const ProductGrid = ({ onProductClick }: ProductGridProps) => {
                 onClick={(e) => {
                   e.stopPropagation();
                   const message = encodeURIComponent(
-                    `Hi, I'm interested in your product: ${product.name}. Image: ${product.image_url} and Price: ₦${product.price}. Can we negotiate?`
+                    `Hi, I'm interested in your product: ${product.name}.Price: ₦${product.price}. Can we negotiate?`
                   );
                   window.open(`https://wa.me/${product.users.whatsapp_number}?text=${message}`, '_blank');
                 }}
