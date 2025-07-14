@@ -340,8 +340,7 @@ const AdminDashboard = () => {
                       
                       <div>
                         <p className="font-medium">Total</p>
-                        <p className="text-muted-foreground">33Number(order.total_price).toFixed(2)}</p>
-                        <p className="text-muted-foreground">{Number(order.total_price).toFixed(2)}</p>
+                        <p className="text-muted-foreground">₦{Number(order.total_price).toFixed(2)}</p>
                       </div>
                     </div>
                   </div>
